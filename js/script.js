@@ -21,8 +21,10 @@ function replyBot(n) {
 
     console.log(reply_user);
 
-    if(reply_user === '' || typeof reply_user === "undefined" || reply_user === null || reply_user.match(/^[ ]+$/)) {
-        console.log('Игра окончена');
+    if(typeof reply_user === "undefined" || reply_user.match(/^[ ]+$/) || reply_user == '') {
+        //console.log('Игра окончена');    
+        alert('Введи число!');
+        replyBot(n);
     } else if(n === parseFloat(reply_user)) {
         alert('You Win');
     } else if(!isNumber(reply_user) && reply_user !== null) {
