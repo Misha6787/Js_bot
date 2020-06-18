@@ -21,7 +21,7 @@ function replyBot(n) {
 
     console.log(reply_user);
 
-    if(reply_user === '') {
+    if(reply_user === '' || typeof reply_user === "undefined" || reply_user === null || reply_user.match(/^[ ]+$/)) {
         console.log('Игра окончена');
     } else if(n === parseFloat(reply_user)) {
         alert('You Win');
