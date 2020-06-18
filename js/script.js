@@ -21,8 +21,9 @@ function replyBot(n) {
 
     console.log(reply_user);
 
-    if(typeof reply_user === "undefined" || reply_user.match(/^[ ]+$/) || reply_user == '') {
-        //console.log('Игра окончена');    
+    if(reply_user == null){
+        console.log('Конец игры');
+    } else if(typeof reply_user === "undefined" || reply_user.match(/^[ ]+$/) || reply_user == '') {  
         alert('Введи число!');
         replyBot(n);
     } else if(n === parseFloat(reply_user)) {
